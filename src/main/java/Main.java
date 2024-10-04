@@ -10,7 +10,6 @@ public class Main {
         boolean havePartner = false;
 
         while (!havePartner) {
-            //Ищем партнёра
             System.out.println("Введите свой рост в см: ");
             int height = new Scanner(System.in).nextInt();
 
@@ -23,17 +22,14 @@ public class Main {
             System.out.println("Назовите своё хобби: ");
             String hobby = new Scanner(System.in).nextLine();
 
-
             System.out.println("Расскажите, чем занимаетесь в основное время: ");
             String mainClass = new Scanner(System.in).nextLine();
 
-            havePartner = (
-                    (height >= foundHeight - 23 || height <= foundHeight + 3) &&
+            havePartner = ((height >= foundHeight - 23 || height <= foundHeight + 3) &&
                     (age >= foundAge - 3 || age <= foundAge + 1) &&
                     (weight >= foundWeight - 15.9 || weight <= foundWeight + 4.9) &&
                     (hobby.compareToIgnoreCase(foundHobby) == 0 || hobby.toLowerCase().contains(foundHobby.toLowerCase())) &&
-                    (mainClass.compareToIgnoreCase(foundMainClass) == 0 || mainClass.toLowerCase().contains(foundMainClass.toLowerCase()))
-                    ) ? true : false;
+                    (mainClass.compareToIgnoreCase(foundMainClass) == 0 || mainClass.toLowerCase().contains(foundMainClass.toLowerCase()))) ? true : false;
 
             if (!havePartner) {
                 System.out.println("Попробуем поискать ещё, Вы не подошли по указанным параметрам :(");
